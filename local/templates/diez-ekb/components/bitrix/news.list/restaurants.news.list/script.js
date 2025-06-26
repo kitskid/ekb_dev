@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Инициализация Яндекс.Карты
-    initHotelsMap();
+    initRestaurantsMap();
 
     // Обработчик для фильтрации по типам гостиниц
     const filterItems = document.querySelectorAll('.tag--filter:not(.tag--reset)');
@@ -415,60 +415,52 @@ function loadMoreHotels(page, containerId, types) {
 }
 
 // Инициализация карты Яндекс
-function initHotelsMap() {
-    if (typeof ymaps !== 'undefined' && document.getElementById('hotels-map') && typeof hotelsMapData !== 'undefined') {
+function initRestaurantsMap() {
+    if (typeof ymaps !== 'undefined' && document.getElementById('restaurants-map') && typeof restaurantsMapData !== 'undefined') {
         ymaps.ready(function() {
             // Дополнительная проверка и сброс стилей контейнера карты
-            const mapElement = document.getElementById('hotels-map');
+            const mapElement = document.getElementById('restaurants-map');
             if (mapElement) {
-                // Установка размеров для контейнера карты
                 mapElement.style.width = '100%';
                 mapElement.style.height = '100%';
             }
 
-            const map = new ymaps.Map('hotels-map', {
+            const map = new ymaps.Map('restaurants-map', {
                 center: [56.8519, 60.6122], // Центр Екатеринбурга
                 zoom: 12,
                 controls: ['zoomControl', 'fullscreenControl']
             }, {
-                // Дополнительные опции для предотвращения смещения
                 suppressMapOpenBlock: true,
                 yandexMapDisablePoiInteractivity: true
             });
 
             // Добавляем метки на карту
-            hotelsMapData.forEach(function(hotel) {
-                if (hotel.LAT && hotel.LON) {
+            restaurantsMapData.forEach(function(restaurant) {
+                if (restaurant.LAT && restaurant.LON) {
                     const placemark = new ymaps.Placemark(
-                        [parseFloat(hotel.LAT), parseFloat(hotel.LON)],
+                        [parseFloat(restaurant.LAT), parseFloat(restaurant.LON)],
                         {
-                            hintContent: hotel.NAME,
-                            balloonContent: `<strong>${hotel.NAME}</strong><br>${hotel.ADDRESS || ''}<br><a href="${hotel.DETAIL_URL}">Подробнее</a>`
+                            hintContent: restaurant.NAME,
+                            balloonContent: `<strong>${restaurant.NAME}</strong><br>${restaurant.ADDRESS || ''}<br><a href="${restaurant.DETAIL_URL}">Подробнее</a>`
                         },
                         {
                             preset: 'islands#redDotIcon'
                         }
                     );
-
                     map.geoObjects.add(placemark);
                 }
             });
 
-            // Устанавливаем границы карты по меткам
-            if (hotelsMapData.length > 0) {
+            if (restaurantsMapData.length > 0) {
                 map.setBounds(map.geoObjects.getBounds(), {
                     checkZoomRange: true,
                     zoomMargin: 30
                 }).then(function() {
-                    // Исправляем проблему смещения контейнера карты после загрузки
-                    // Принудительно обновляем размер карты
                     map.container.fitToViewport();
                 });
             }
 
-            // Обработчик изменения размера окна
             window.addEventListener('resize', function() {
-                // Обновляем размер карты при изменении размера окна
                 if (map) {
                     map.container.fitToViewport();
                 }
