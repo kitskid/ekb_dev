@@ -1,0 +1,1 @@
+Стань <strong class="purple">гостем</strong> <br>юбилея

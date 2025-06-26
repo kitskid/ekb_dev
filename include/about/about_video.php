@@ -1,0 +1,2 @@
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/g4DMCrlHXsM?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" title="Екатеринбург - город возможностей">
+</iframe>

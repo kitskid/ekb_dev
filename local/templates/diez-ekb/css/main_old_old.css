@@ -1,0 +1,687 @@
+/* main.css */
+
+/* Глобальные стили */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #f8f9fa;
+    --text-color: #333;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Заголовок сайта */
+.hero {
+    background-image: url('/local/templates/diez-ekb/assets/images/bg-index.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    color: var(--white);
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 15%;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Секции */
+.section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 0.5rem auto;
+}
+
+.section-more {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.btn-more {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-more:hover {
+    background: #004494;
+    transform: translateY(-3px);
+}
+
+/* Карточки для гостей города */
+.guests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.guest-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.guest-card:hover {
+    transform: translateY(-5px);
+}
+
+.guest-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: var(--white);
+}
+
+.guest-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Афиша и дайджест */
+.events-grid,
+.digest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event-card,
+.digest-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-img,
+.digest-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.event-content,
+.digest-content {
+    padding: 1rem;
+}
+
+.event-date,
+.digest-date {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.event-title,
+.digest-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Год Уральского Юга */
+.ural-year {
+    background-image: url('/local/templates/diez-ekb/assets/images/rock.png');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    color: var(--white);
+    position: relative;
+}
+
+.ural-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.ural-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Мировой уровень */
+.world-level-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Отзывы */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.review-card {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.review-stars {
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.review-text {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.review-author {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* Футер */
+.footer {
+    background: #333;
+    color: var(--white);
+    padding: 3rem 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #555;
+}
+
+/* Шапка сайта */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    margin-left: 1.5rem;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Мобильное меню - базовые стили */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transform: translateX(-100%); /* По умолчанию скрыто */
+    transition: transform 0.3s ease;
+    visibility: hidden; /* Полностью скрываем на десктопе */
+    opacity: 0; /* Делаем прозрачным на десктопе */
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav li {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.mobile-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Кнопка для мобильного меню (бургер) */
+.burger-menu {
+    display: none; /* По умолчанию скрыта на десктопе */
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Кнопка закрытия мобильного меню */
+.close-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* По умолчанию скрыта на десктопе */
+}
+
+/* Активное состояние мобильного меню */
+.mobile-nav.active {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Фиксированная шапка при скролле */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Компенсация для контента при фиксированной шапке */
+.header-fixed + main {
+    padding-top: 60px;
+}
+
+/* Добавляем стили для анимации появления элементов */
+.section-title, .guest-card, .event-card, .digest-card, .world-level-card, .review-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для мобильных слайдеров */
+.mobile-swiper {
+    display: none !important; /* По умолчанию скрыты */
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .guests-grid,
+    .events-grid,
+    .digest-grid,
+    .world-level-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Показываем элементы мобильного меню */
+    .burger-menu,
+    .close-menu {
+        display: block;
+    }
+
+    /* Показываем мобильное меню (но по умолчанию трансформировано влево) */
+    .mobile-nav {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Скрываем основное меню */
+    .main-nav {
+        display: none;
+    }
+
+    .guests-grid,
+    .events-grid,
+    .digest-grid,
+    .world-level-grid,
+    .reviews-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+        display: none; /* Скрываем сетки на мобильном */
+    }
+
+    .hero-content {
+        padding-top: 25%;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    /* Глобальные стили для мобильных слайдеров */
+    .mobile-swiper {
+        display: block !important;
+        overflow: visible;
+        padding-bottom: 40px;
+        margin: 0 -15px;
+    }
+
+    .mobile-swiper .swiper-wrapper {
+        padding: 10px 0;
+    }
+
+    .mobile-swiper .swiper-slide {
+        width: 85%;
+        height: auto;
+        opacity: 0.7;
+        transform: scale(0.9);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .mobile-swiper .swiper-slide-active {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .mobile-swiper .swiper-pagination {
+        bottom: 0;
+    }
+
+    .mobile-swiper .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        background: var(--primary-color);
+        opacity: 0.5;
+    }
+
+    .mobile-swiper .swiper-pagination-bullet-active {
+        opacity: 1;
+    }
+
+    /* Карточки внутри слайдеров */
+    .mobile-swiper .guest-card,
+    .mobile-swiper .event-card,
+    .mobile-swiper .digest-card,
+    .mobile-swiper .world-level-card,
+    .mobile-swiper .review-card {
+        height: auto;
+        width: 100%;
+        margin: 0;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Отдельные стили для разных типов карточек в мобильных слайдерах */
+    .mobile-swiper .guest-card {
+        height: 180px;
+    }
+
+    .mobile-swiper .review-card {
+        height: auto;
+        min-height: 150px;
+    }
+
+    /* Адаптация футера для мобильных */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        display: grid; /* Возвращаем для футера отображение сеткой */
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-title::after {
+        margin: 0.5rem auto;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-links li {
+        margin: 0 10px 10px;
+    }
+
+    /* Стили для герой-секции на мобильных */
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-content {
+        padding-top: 35%;
+    }
+
+    /* Адаптация разделов для мобильных */
+    .section {
+        padding: 2rem 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-more {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+
+    .btn-more {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Специфические стили для самых маленьких экранов */
+@media (max-width: 359.98px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .mobile-swiper .swiper-slide {
+        width: 95%;
+    }
+}
+
+/* Стили для десктопа - гарантированное скрытие мобильных элементов */
+@media (min-width: 768px) {
+    .mobile-nav,
+    .burger-menu,
+    .close-menu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    .main-nav {
+        display: block !important;
+    }
+
+    .mobile-swiper {
+        display: none !important;
+    }
+}

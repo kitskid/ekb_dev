@@ -1,0 +1,1 @@
+<img alt="Декоративная картинка" src="<?= SITE_TEMPLATE_PATH ?>/assets/images/404.svg">

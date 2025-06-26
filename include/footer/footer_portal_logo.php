@@ -1,0 +1,1 @@
+<img alt="" src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo-ekb-1.png">

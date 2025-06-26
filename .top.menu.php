@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+    Array(
+        "О Екатеринбурге и городах спутниках",
+        "/about/",
+        Array(),
+        Array("MENU_ITEM_ID"=>"about"),
+        ""
+    ),
+    Array(
+        "Город развивается",
+        "/development/",
+        Array(),
+        Array("MENU_ITEM_ID"=>"development"),
+        ""
+    ),
+    Array(
+        "Гостям",
+        "/tourism/",
+        Array(),
+        Array("MENU_ITEM_ID"=>"tourism"),
+        ""
+    ),
+    Array(
+        "Спецпроекты",
+        "/special/",
+        Array(),
+        Array("MENU_ITEM_ID"=>"special"),
+        ""
+    ),
+    Array(
+        "Справка",
+        "/reference/",
+        Array(),
+        Array("MENU_ITEM_ID"=>"reference"),
+        ""
+    )
+);
+?>

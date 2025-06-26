@@ -1,0 +1,1 @@
+<img alt="Логотип" src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.svg">

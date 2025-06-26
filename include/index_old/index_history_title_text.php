@@ -1,0 +1,1 @@
+300 историй <br> <strong class="purple">Екатеринбурга</strong>

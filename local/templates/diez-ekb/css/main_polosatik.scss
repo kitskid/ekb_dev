@@ -1,0 +1,47 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  z-index: 4;
+  transition: .2s linear;
+
+  @include r($mobile) {
+    padding: 10px 0;
+  }
+
+  .container {
+    position: static;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &.invert {
+    --currentHeaderColor: var(--black);
+    background: var(--white);
+  }
+}
+
+.header.invert {
+}
+
+.header-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__button {
+    display: flex;
+    cursor: pointer;
+    color: var(--currentHeaderColor);
+    transition: .2s linear;
+  }
+}
