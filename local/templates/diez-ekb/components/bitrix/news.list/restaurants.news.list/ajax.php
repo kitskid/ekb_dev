@@ -19,13 +19,12 @@ if (isset($_REQUEST['type']) && !empty($_REQUEST['type'])) {
     // Удаляем пустые значения
     $selectedTypes = array_filter($selectedTypes);
 }
-var_dump($selectedTypes);
 $page = isset($_REQUEST["page"]) ? intval($_REQUEST["page"]) : 1;
 
 // Формируем параметры компонента
 $componentParams = array(
     "IBLOCK_TYPE" => "content",
-    "IBLOCK_ID" => "26",
+    "IBLOCK_ID" => "21",
     "ACTIVE_DATE_FORMAT" => "d.m.Y",
     "ADD_SECTIONS_CHAIN" => "N",
     "AJAX_MODE" => "N",
@@ -54,11 +53,13 @@ $componentParams = array(
     "PAGER_SHOW_ALL" => "N",
     "PAGER_SHOW_ALWAYS" => "N",
     "PAGER_TEMPLATE" => ".default",
-    "PAGER_TITLE" => "Гостиницы",
+    "PAGER_TITLE" => "Рестораны",
     "PARENT_SECTION" => "",
     "PARENT_SECTION_CODE" => "",
     "PREVIEW_TRUNCATE_LEN" => "",
-    "PROPERTY_CODE" => array("TYPE", "ADDRESS", "TOP", "GALLERY", "COORDINATES"),
+    "PROPERTY_CODE" => array(
+        "TYPE", "ADDRESS", "TOP", "GALLERY", "COORDINATES", "CUISINE", "PRICE_LEVEL", "FEATURES", "CITY", "RATING", "PRICE", "EMAIL", "PHONE", "OPEN_HOURS", "SITE", "SOCIAL_NETWORKS"
+    ),
     "SET_BROWSER_TITLE" => "N",
     "SET_LAST_MODIFIED" => "N",
     "SET_META_DESCRIPTION" => "N",
@@ -83,7 +84,7 @@ if($page > 1) {
 global $APPLICATION;
 $APPLICATION->IncludeComponent(
     "bitrix:news.list",
-    "hotels.news.list",
+    "restaurants.news.list",
     $componentParams
 );
 

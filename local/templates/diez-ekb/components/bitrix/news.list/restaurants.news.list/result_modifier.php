@@ -39,11 +39,11 @@ $currentPage = isset($_REQUEST['page']) ? intval($_REQUEST['page']) : 1;
 $categories = array();
 $arResult["MAP_ITEMS"] = array();
 
-$cacheId = "hotel_categories_map_" . $arParams["IBLOCK_ID"] . "_" . md5(serialize($arParams));
+$cacheId = "restaurant_categories_map_" . $arParams["IBLOCK_ID"] . "_" . md5(serialize($arParams));
 $cacheTime = 3600;
 $obCache = new CPHPCache;
 
-if ($obCache->InitCache($cacheTime, $cacheId, "/hotel_categories/")) {
+if ($obCache->InitCache($cacheTime, $cacheId, "/restaurant_categories/")) {
     $res = $obCache->GetVars();
     $categories = $res["categories"];
     $arResult["MAP_ITEMS"] = $res["mapItems"];
@@ -65,7 +65,7 @@ if ($obCache->InitCache($cacheTime, $cacheId, "/hotel_categories/")) {
 
     // Собираем все элементы для обработки
     while ($arAllItem = $rsAllItems->GetNext()) {
-        // ИСПРАВЛЕНИЕ: Получаем свойство TYPE с VALUE_ENUM
+        // Получаем свойство TYPE с VALUE_ENUM
         $rsTypeProp = CIBlockElement::GetProperty(
             $arParams["IBLOCK_ID"],
             $arAllItem["ID"],
@@ -77,7 +77,7 @@ if ($obCache->InitCache($cacheTime, $cacheId, "/hotel_categories/")) {
         $typeXmlIds = array();
         while ($prop = $rsTypeProp->Fetch()) {
             if (!empty($prop["VALUE"])) {
-                $typeValues[] = $prop["VALUE_ENUM"]; // ИСПРАВЛЕНИЕ: используем VALUE_ENUM
+                $typeValues[] = $prop["VALUE_ENUM"];
                 $typeXmlIds[] = $prop["VALUE_XML_ID"];
             }
         }
@@ -125,13 +125,13 @@ if ($obCache->InitCache($cacheTime, $cacheId, "/hotel_categories/")) {
 
         // Создаем категории
         for ($i = 0; $i < count($typeValues); $i++) {
-            $value = $typeValues[$i]; // Теперь это правильное текстовое название
+            $value = $typeValues[$i];
             $xml_id = isset($typeXmlIds[$i]) ? $typeXmlIds[$i] : $value;
 
             if (!empty($value) && !empty($xml_id)) {
                 if (!isset($categories[$xml_id])) {
                     $categories[$xml_id] = array(
-                        'NAME' => $value, // Теперь здесь правильное название
+                        'NAME' => $value,
                         'XML_ID' => $xml_id,
                         'COUNT' => 1,
                         'ACTIVE' => in_array($xml_id, $selectedTypes)
