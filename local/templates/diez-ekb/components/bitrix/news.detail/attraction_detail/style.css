@@ -1,0 +1,90 @@
+.attraction-detail {
+    padding: 60px 0;
+}
+
+.attraction-detail h1 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.attraction-detail__address {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.attraction-detail__image {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.attraction-detail__description {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.attraction-detail__routes {
+    margin-bottom: 30px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.attraction-detail__routes h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.attraction-detail__routes ul {
+    padding-left: 20px;
+}
+
+.attraction-detail__routes li {
+    margin-bottom: 8px;
+}
+
+.attraction-detail__back {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.attraction-detail__map {
+    height: 400px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.attraction-detail__sidebar-block {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.attraction-detail__sidebar-block h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+@media (max-width: 991px) {
+    .attraction-detail__map {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .attraction-detail {
+        padding: 30px 0;
+    }
+
+    .attraction-detail h1 {
+        font-size: 24px;
+    }
+}

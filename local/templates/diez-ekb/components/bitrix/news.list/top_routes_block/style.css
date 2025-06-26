@@ -1,0 +1,149 @@
+/* Стили для секции "Топ маршрутов" */
+.top-routes-section {
+    padding: 60px 0;
+    background-color: #fff;
+    position: relative;
+}
+
+.top-routes-section::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #2196F3;
+    bottom: 40px;
+    right: 40px;
+}
+.top-routes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.top-route-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.top-route-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.top-route-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.route-type-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #FF5722;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.top-route-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    color: white;
+}
+
+.top-route-overlay-content {
+    width: 100%;
+}
+
+.route-info {
+    display: flex;
+    gap: 15px;
+}
+
+.route-info-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.info-icon {
+    margin-right: 6px;
+    color: #fff;
+}
+
+.top-route-content {
+    padding: 20px;
+    position: relative;
+}
+
+.top-route-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.top-route-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.top-route-more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 600;
+    font-size: 14px;
+    color: #FF5722;
+    margin-top: auto;
+}
+
+.top-route-more svg {
+    margin-left: 6px;
+    transition: transform 0.2s ease;
+    color: #FF5722;
+}
+
+.top-route-card:hover .top-route-more svg {
+    transform: translateX(3px);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .top-routes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .top-routes-grid {
+        grid-template-columns: 1fr;
+    }
+}

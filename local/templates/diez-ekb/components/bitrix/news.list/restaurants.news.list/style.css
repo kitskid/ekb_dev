@@ -1,0 +1,90 @@
+/* Стили для индикатора загрузки */
+.hotels__list.loading {
+    position: relative;
+    min-height: 200px;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.hotels__list.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #0070c0;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.button.loading .button__icon {
+    animation: spin 1s linear infinite;
+}
+
+/* Стили для кнопки сброса фильтров */
+.tag--reset {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.tag--reset:hover {
+    background-color: #d32f2f;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Стили для контейнера карты */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Стили для элемента карты */
+.map-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Исправление для iframe внутри карты */
+.map-element iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+}
+
+/* Исправления для правильного отображения в Яндекс.Картах */
+.ymaps-2-1-79-map {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.ymaps-2-1-79-map > ymaps {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Для других версий API Яндекс.Карт */
+[class^="ymaps-"] {
+    box-sizing: content-box;
+}
+
+[class^="ymaps-"] ymaps {
+    box-sizing: content-box;
+}
+

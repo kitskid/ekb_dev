@@ -1,0 +1,163 @@
+/* Стили для блока "Другие маршруты" */
+.related-routes {
+    margin-bottom: 40px;
+}
+
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.route-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.route-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.route-card-image {
+    height: 160px;
+    background-color: #e0e0e0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.route-type-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.route-card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 160px);
+}
+
+.route-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.route-card-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.route-info-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.info-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.difficulty-icon {
+    background-image: url('/local/templates/.default/images/icons/difficulty.svg');
+}
+
+.duration-icon {
+    background-image: url('/local/templates/.default/images/icons/clock.svg');
+}
+
+.distance-icon {
+    background-image: url('/local/templates/.default/images/icons/distance.svg');
+}
+
+.route-card-more {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.route-card-more svg {
+    margin-left: 6px;
+    transition: transform 0.2s ease;
+}
+
+.route-card:hover .route-card-more svg {
+    transform: translateX(3px);
+}
+
+/* Цветовые варианты карточек */
+.route-card-green {
+    border-top: 3px solid #4CAF50;
+}
+.route-card-green .route-card-more {
+    color: #4CAF50;
+}
+
+.route-card-orange {
+    border-top: 3px solid #FF9800;
+}
+.route-card-orange .route-card-more {
+    color: #FF9800;
+}
+
+.route-card-purple {
+    border-top: 3px solid #9C27B0;
+}
+.route-card-purple .route-card-more {
+    color: #9C27B0;
+}
+
+.route-card-blue {
+    border-top: 3px solid #2196F3;
+}
+.route-card-blue .route-card-more {
+    color: #2196F3;
+}
+
+.route-card-red {
+    border-top: 3px solid #F44336;
+}
+.route-card-red .route-card-more {
+    color: #F44336;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .routes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .routes-grid {
+        grid-template-columns: 1fr;
+    }
+}

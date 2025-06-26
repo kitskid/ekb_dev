@@ -1,0 +1,197 @@
+/* Стили для секции "Ваш гид по Екатеринбургу" */
+.guides-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.guides-section::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #FFD700;
+    opacity: 0.15;
+    bottom: -30px;
+    left: -30px;
+    z-index: 0;
+}
+
+.guides-header {
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.guides-description {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.guide-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.guide-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.guide-card:hover .guide-image img {
+    transform: scale(1.05);
+}
+
+.guide-no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    color: #999;
+}
+
+.guide-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.guide-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.guide-bio {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.guide-contacts {
+    margin-bottom: 15px;
+}
+
+.guide-contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.contact-icon {
+    margin-right: 8px;
+    color: #2196F3;
+    flex-shrink: 0;
+}
+
+.contact-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #2196F3;
+}
+
+.guide-routes {
+    margin-top: auto;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.guide-routes-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.guide-routes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.guide-route-link {
+    font-size: 12px;
+    color: #fff;
+    background-color: #2196F3;
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.guide-route-link:hover {
+    background-color: #1976D2;
+}
+
+.guide-more-link {
+    display: inline-block;
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: auto;
+    transition: color 0.2s ease;
+}
+
+.guide-more-link:hover {
+    color: #1976D2;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .guides-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .guides-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-image {
+        height: 180px;
+    }
+}

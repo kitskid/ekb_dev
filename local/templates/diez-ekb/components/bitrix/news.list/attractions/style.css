@@ -1,0 +1,194 @@
+/* Стили для блока достопримечательностей */
+.attractions-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 120px 0;
+    margin-bottom: 60px;
+}
+
+.attractions-hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.attractions-hero h1 {
+    position: relative;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.attractions-hero__description {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.attractions-list {
+    padding: 60px 0;
+}
+
+.attractions-list h2,
+.attractions-map h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.attraction-card {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.attraction-card:hover {
+    transform: translateY(-5px);
+}
+
+.attraction-card__link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.attraction-card__image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.attraction-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.attraction-card__label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.attraction-card__label.new {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.attraction-card__content {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.attraction-card__title {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.attraction-card__address {
+    font-size: 14px;
+    color: #666;
+}
+
+.attractions-list__more {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.attractions-map {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.yandex-map {
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Стили для кнопки "Показать больше" */
+.load-more-btn {
+    padding: 12px 25px;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #0b5ed7;
+}
+
+.load-more-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 991px) {
+    .attractions-hero {
+        padding: 80px 0;
+    }
+
+    .attractions-hero h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 767px) {
+    .attractions-hero {
+        padding: 60px 0;
+    }
+
+    .attractions-hero h1 {
+        font-size: 28px;
+    }
+
+    .attractions-hero__description {
+        font-size: 16px;
+    }
+
+    .attraction-card__image {
+        height: 180px;
+    }
+
+    .yandex-map {
+        height: 400px;
+    }
+}
+
+@media (max-width: 575px) {
+    .attractions-hero {
+        padding: 40px 0;
+    }
+
+    .attractions-list h2,
+    .attractions-map h2 {
+        font-size: 24px;
+    }
+}

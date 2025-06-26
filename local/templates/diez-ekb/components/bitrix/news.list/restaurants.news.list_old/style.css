@@ -1,0 +1,89 @@
+/* Добавляем стили для тегов фильтра особенностей */
+.filter-tags {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-tags__label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #666;
+}
+
+.filter-tags__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-tag {
+    display: inline-block;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-tag:hover {
+    background-color: #e9e9e9;
+}
+
+.filter-tag.active {
+    background-color: #2C9644;
+    border-color: #2C9644;
+    color: #fff;
+}
+
+/* Стили для карточек ресторанов */
+.restaurant-card__features {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.restaurant-card__feature {
+    font-size: 12px;
+    color: #777;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Стили для пустого результата фильтрации */
+.restaurants-empty {
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    color: #666;
+}
+
+/* Стили для индикатора загрузки */
+.restaurants-loading {
+    text-align: center;
+    padding: 30px;
+}
+
+.restaurants-loading:after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #2C9644;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
